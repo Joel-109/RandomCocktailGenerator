@@ -46,6 +46,7 @@ section{
     margin-top: 2rem;
     font-weight: 700;
     cursor: pointer;
+    border-color: black;
 }
 
 article{    
@@ -87,13 +88,14 @@ article{
 
 .show-favorite{
     position: fixed;
-    background-color: #1a2255;
+    background-color: #212a71;
     height: 100%;
     width: clamp(20rem, 25rem, 30rem);
     z-index: 20;
     top: 0;
     right: 0;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem black;
 
     & h1{
         color: #F4D06F;
@@ -101,6 +103,23 @@ article{
     }
 }   
 
+#favorite-zone{
+
+    & img{
+        aspect-ratio: 1/1;
+        width: 4rem;
+    }
+}
+
 .hide-favorite{
     right: -34rem;
+}
+
+#loading{
+    height: 100vh;
+    width: 100%;
+    background-color: skyblue;
+    align-items: center;
+    justify-content: center;
+
 }
