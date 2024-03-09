@@ -17,7 +17,6 @@ async function fetchFavoriteData(drink){
     const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink.name}`);
     const data = await response.json();
 
-    const favoriteDrink = {id,name, ingredients, instructions,image, category}
     createFavoriteHTMLDrink(drinkAttributes(data));
 }
 
@@ -33,11 +32,13 @@ async function fetchFavorites(id){
 }
 
 function drinkAttributes(data){
+    const id = data.drinks[0].idDrink;
     const ingredients = [];
     const instructions = data.drinks[0].strInstructions;
     const image = data.drinks[0].strDrinkThumb;
     const name = data.drinks[0].strDrink;
     const category = data.drinks[0].strCategory;
+    console.log("nnn");
 
     for (let i=0;i<15;i++){
         if(data.drinks[0][`strIngredient${i}`] !== null && data.drinks[0][`strIngredient${i}`] !== undefined){

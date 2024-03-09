@@ -10,7 +10,7 @@ function recieveDrink(oneDrink){
 function createHTMLElement(){
     let ingredients = organizeList(drink.ingredients);
     let instructions = makeList(drink.instructions);
-    console.log(ingredients);
+    
     const innerHTML = 
     `
         <img src="${drink.image}" alt="coctail">
@@ -55,9 +55,9 @@ function organizeList(list){
 function createFavoriteHTMLDrink(favoriteDrink){
     let innerHTML =
     `
-    <article class="favorite-coctail">
+    <article id="${favoriteDrink.id}"  class="favorite-coctail">
         <img src="${favoriteDrink.image}" alt="">
-        <h1> ${favoriteDrink.name} - ${favoriteDrink.id}</h1> 
+        <h2> ${favoriteDrink.name} - ${favoriteDrink.id}</h2> 
     </article>
     `
     showFavoriteDrink(innerHTML);

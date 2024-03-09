@@ -1,9 +1,8 @@
 import {createFavoriteHTMLDrink} from "./ParseData.js"
 import {fetchFavoriteData} from "./obtainDrinks.js"
-
 let counter = 0;
 let drink = {};
-
+let favoriteList = [];
 function setDrink(adrink){
     drink = adrink;
 }
@@ -13,9 +12,15 @@ function addDrink(){
     let id = drink.id;
     let saveData = {name,id};
 
-    localStorage.setItem(`Coctail${counter}`,JSON.stringify(saveData));
-    counter+=1;
-    createFavoriteHTMLDrink(drink);
+    if(!verifyExistinceOfDrink()){
+        localStorage.setItem(`Coctail${counter}`,JSON.stringify(saveData));
+        counter+=1;
+        favoriteList.push(drink);
+        createFavoriteHTMLDrink(drink);
+        
+    } else{
+        alert("This coctail is already in your favorite list of Coctails");
+    }
 }   
 
 function bringFavoriteDrinks(){
@@ -23,10 +28,10 @@ function bringFavoriteDrinks(){
 
     for(let i=0;i<12000;i++){
         favoriteDrink = JSON.parse(window.localStorage.getItem(`Coctail${i}`));
-        console.log(favoriteDrink);
         if(favoriteDrink !== null){
+            favoriteList.push(favoriteDrink);
             fetchFavoriteData(favoriteDrink); 
-            console.log("here");
+            counter+=1;
         } else{
             break;
         }
@@ -34,8 +39,13 @@ function bringFavoriteDrinks(){
 }
 
 function verifyExistinceOfDrink(){
-    
-    
+    let existence = false;;
+    favoriteList.forEach(element => {
+        if(element.name === `${drink.name}`){
+            existence = true;
+        }
+    });
+    return existence;
 }
 
 export{addDrink, setDrink, bringFavoriteDrinks}

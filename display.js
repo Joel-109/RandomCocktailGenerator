@@ -12,7 +12,6 @@ function showDrink(htmlElement){
 
 function showFavoriteDrink(htmlElement){
     favoriteDrinks.innerHTML +=htmlElement;
-    console.log("2");
 }
 
 function putFavorite(){

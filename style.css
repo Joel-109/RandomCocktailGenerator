@@ -33,7 +33,7 @@ header{
 main{
     background-color: #9ec7e2;
     margin-top: 4rem;
-    height: 100vh;
+    height: auto;
     padding: 4%;
 }
 
