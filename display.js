@@ -1,11 +1,18 @@
 let container = document.getElementById("main-container");
 let imgClick = document.getElementById("favorite-zone");
-
+let loader = document.getElementById("load");
+let favoriteDrinks = document.getElementById("favorite-zone");
 let hidden = true;
+
 
 function showDrink(htmlElement){
     container.innerHTML="";
     container.innerHTML+= htmlElement;
+}
+
+function showFavoriteDrink(htmlElement){
+    favoriteDrinks.innerHTML +=htmlElement;
+    console.log("2");
 }
 
 function putFavorite(){
@@ -18,4 +25,12 @@ function putFavorite(){
     }
 }
 
-export{showDrink,putFavorite}
+function loadAnimation(boolean){
+    if(boolean==true){
+        loader.classList.remove("loader--hidden");
+    } else{
+        loader.classList.add("loader--hidden");
+    }
+}
+
+export{showDrink,putFavorite,loadAnimation,showFavoriteDrink}

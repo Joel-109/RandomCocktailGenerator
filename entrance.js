@@ -1,22 +1,40 @@
-import { fetchData } from "./obtainDrinks.js";
+import { fetchData, fetchFavorites } from "./obtainDrinks.js";
 import {putFavorite} from "./display.js"
+import {addDrink, bringFavoriteDrinks} from "./saveDrinks.js"
 
 let randomButton = document.getElementById("random-button");
 let imgClick = document.getElementById("favorite-image");
 let addButton = document.getElementById("add-button");
+let favoriteClass = document.getElementsByClassName("favorite-coctail");
+
 
 window.addEventListener("load", () => {
-    fetchData();
+    process();
+    bringFavoriteDrinks();
 })
 
 randomButton.addEventListener("click", () => {
-   fetchData();
+    process();
 })
 
 imgClick.addEventListener("click", () => {
     putFavorite();
 })
 
-addButton.addEventListener("click", )
+function process(){ 
+    fetchData();
+}
+
+addButton.addEventListener("click" , () => {
+    addDrink();
+})
+
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("favorite-coctail")) {
+        let id = event.target.getAttribute('id');
+        console.log("2")
+        fetchFavorites(id);
+    }
+});
 
 

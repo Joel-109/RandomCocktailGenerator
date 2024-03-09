@@ -13,41 +13,19 @@
             <img id="favorite-image" src="favorite.png" alt="favorite">
         </header>
         <main>
-            <section>
-                <article id="main-container">
-                </article>
-                <button id="random-button"> Generate Random </button>
-            </section>
+            <article id="main-container">
+            </article>
+            <button id="add-button"> ADD </button>
+            <button id="random-button"> Generate Random </button>
         </main>
         <section id="favorite-zone" class="show-favorite hide-favorite">
             <h1>Favorite Coctails</h1>
-            <article>
+            <article class="favorite-coctail">
                 <img src="Margarita.jpeg" alt="">
-                <div>
-                    <h1> Margarita</h1>
-                    <span> 1922</span>
-                </div>
+                <h1> Margarita - 1922</h1> 
             </article>
         </section>
-        <section id="loading" class="loadClass">
-            <div class="dots">
-                <span style="--i:1;" ></span>
-                <span style="--i:2;" ></span>
-                <span style="--i:3;" ></span>
-                <span style="--i:4;" ></span>
-                <span style="--i:5;" ></span>
-                <span style="--i:6;" ></span>
-                <span style="--i:7;" ></span>
-                <span style="--i:8;" ></span>
-                <span style="--i:9;" ></span>
-                <span style="--i:10;" ></span>
-                <span style="--i:11;" ></span>
-                <span style="--i:12;" ></span>
-                <span style="--i:13;" ></span>
-                <span style="--i:14;" ></span>
-                <span style="--i:15;" ></span>
-            </div>
-        </section>
+        <div id="load" class="loader loader--hidden"> </div>
         <script type="module" src="obtainDrinks.js"></script>
         <script type="module" src="entrance.js"></script>
     </body>
