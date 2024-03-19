@@ -30,6 +30,7 @@ addButton.addEventListener("click" , () => {
 })
 
 document.addEventListener("click", function(event) {
+    console.log("asasassasa");
     if (event.target.classList.contains("favorite-coctail")) {
         let id = event.target.getAttribute('id');
         fetchFavorites(id);
