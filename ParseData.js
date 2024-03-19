@@ -55,7 +55,7 @@ function organizeList(list){
 function createFavoriteHTMLDrink(favoriteDrink){
     let innerHTML =
     `
-    <article id="${favoriteDrink.id}"  class="favorite-coctail">
+    <article id="${favoriteDrink.id}" class="favorite-coctail">
         <img src="${favoriteDrink.image}" alt="">
         <h2> ${favoriteDrink.name} - ${favoriteDrink.id}</h2> 
     </article>
